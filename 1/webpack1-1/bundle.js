@@ -101,7 +101,8 @@ console.log(_b_js__WEBPACK_IMPORTED_MODULE_0__["name"])
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
-var name = 'Jack';
+var name = 'Seven111';
+
 
 /***/ })
 /******/ ]);
