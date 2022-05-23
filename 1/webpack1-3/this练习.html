@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var name = "window name"
+        // var obj = {
+        //     name: "obj.name",
+        //     getName: function () {
+        //         console.log("外面="+this.name)
+        //         return function () {
+        //             console.log("内部="+this.name)
+        //         }
+        //     }
+        // }
+        // obj.getName()// 外面=obj.name
+        // obj.getName()()//外面=obj.name 内部=window name
+
+        // var name = "window name"
+        // var obj = {
+        //     name: "obj.name",
+        //     getName: function () {
+        //         console.log("外面=" + this.name)
+        //         return function () {
+        //             console.log("内部=" + this.name)
+        //         }.bind(this)
+        //     }
+        // }
+        // obj.getName()()//外面=obj.name 内部=obj.name
+
+
+        // function a() {
+        //     var user = "追梦子";
+        //     function b(){
+        //         console.log(this)
+        //     }
+        //     b()
+        // }
+        // a();
+
+
+        // function a() {
+        //     var user = "追梦子";
+        //     console.log(this.user); //undefined
+        //     console.log(this);　　//Window
+        // }
+        // window.a();
+
+
+        // var o = {
+        //     a: 10,
+        //     b: {
+        //         a: 12,
+        //         fn: function () {
+        //             console.log(this.a); //12
+        //         }
+        //     }
+        // }
+        // o.b.fn();
+
+
+        // var o = {
+        //     a: 10,
+        //     b: {
+        //         a: 12,
+        //         fn: function () {
+        //             console.log(this.a); //undefined
+        //             console.log(this); //window
+        //         }
+        //     }
+        // }
+        // var j = o.b.fn;
+        // j();
+
+
+        // function Fn() {
+        //     this.user = "追梦子";
+        // }
+        // var a = new Fn();
+        // console.log(a)
+        // console.log(a.user); //追梦子
+
+        // function Fn() {
+        //     this.user = '追梦子';
+        //     return {};
+        // }
+        // var a = new Fn;
+        // console.log(a)
+        // console.log(a.user); //undefined
+
+        // function Fn() {
+        //     this.user = '追梦子';
+        //     return function () { };
+        // }
+        // var a = new Fn;
+        // console.log(a)
+        // console.log(a.user); //undefined
+
+        //如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。
+        // function Fn() {
+        //     this.user = '追梦子';
+        //     return 1;
+        // }
+        // var a = new Fn;
+        // console.log(a)
+        // console.log(a.user); //追梦子 
+
+        // var a = {
+        //     user: "追梦子",
+        //     fn: function () {
+        //         console.log(this.user); //追梦子
+        //     }
+        // }
+        // var b = a.fn;
+        // b.call(a);
+
+
+        var name = 'window'; // 其实是window.name = 'window'
+
+        var A = {
+            name: 'A',
+            sayHello: function () {
+                console.log(this.name)
+            }
+        }
+
+        A.sayHello();// 输出A
+
+        var B = {
+            name: 'B'
+        }
+
+        A.sayHello.call(B);//输出B
+
+        
+        A.sayHello.call(); //
+
+    </script>
+</body>
+
+</html>

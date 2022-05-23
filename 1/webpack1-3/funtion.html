@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function showMessage(from, text="没有参数") {
+        //     alert(from + ": " + text);
+        // }
+
+        // showMessage("Ann",12); // Ann: no text given
+
+
+        // var Person1 = function () {
+        //     this.name = 'linxin';
+        // }
+        // var Person2 = function () {
+        //     this.getname = function () {
+        //         console.log(this.name);
+        //     }
+        //     console.log(this)
+        //     Person1.call(this);
+        // }
+        // var person = new Person2();
+        // console.log(person)
+        // person.getname(); 
+
+
+        arr1 = ["a", "b", "c"]
+        arr2 = ["d", "f"]
+        arr1.push.apply(arr2, arr2)
+        console.log(arr1)
+
+
+        // function Animal() {
+        //     this.name = 'animal';
+        //     this.sayName = function () {
+        //         console.log(this)
+        //         console.log(this.name);
+        //     }
+        // }
+
+        // function Cat() {
+        //     this.name = 'cat';
+        // }
+
+        // var animal = new Animal();
+        // var cat = new Cat();
+
+        // animal.sayName.call(Number(1)); // cat
+        // animal.sayName.call(cat);//cat
+        // animal.sayName.call(animal);//cat
+        // this 永远指向最后调用它的那个对象
+        // 该例子中sayName方法的this指向Cat
+
+
+        // var name = '小王', age = 17;
+        // var obj = {
+        //     name: '小张',
+        //     objAge: this.age,
+        //     myFun: function () {
+        //         console.log(this.name + "年龄" + this.age)
+        //     }
+        // }
+        // var db = {
+        //     name: '德玛',
+        //     age: 99
+        // }
+        // obj.myFun.apply(this)
+        // obj.myFun.call(obj)
+        // var a = obj.myFun.bind(db)()
+
+        // obj = {a:22}
+        // console.log(Object.prototype.toString.bind(obj)())
+
+        // var obj = {
+        //     foo: function () {
+        //         console.log(this)
+        //     }
+        // }
+
+        // obj.foo() 
+        // obj.foo.call(obj)
+
+        // var obj = {
+        //     foo: function () {
+        //         console.log(this)
+        //     }
+        // }
+        // var bar = obj.foo
+        // obj.foo.call(obj)
+        // bar.call()
+
+
+        // function fn2() { console.log(this) }
+        // function fn() { console.log(this) }
+        // var arr = [fn, fn2]
+        // arr[0]()
+
+        // var Person1 = function () {
+        //     this.name = 'linxin';
+        // }
+        // var Person2 = function () {
+        //     // this.name = "zsd";
+        //     this.getname = function () {
+        //         console.log(this.name);
+        //     }
+        //      Person1.call(this);
+        // }
+        // var person = new Person2();
+        // console.log(person)
+        // person.getname(); 
+
+        var obj = {
+            name: 'linxin'
+        }
+        function func() {
+            console.log(this)
+            console.log(this.name);
+        }
+        var func1 = func.bind(obj);
+        console.log(func1)
+        func1();     
+    </script>
+</body>
+
+</html>
